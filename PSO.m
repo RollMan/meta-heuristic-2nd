@@ -40,7 +40,7 @@ function [xGA, fval, fvalHistory] = PSO(fn)
     %% Common Parameters of PSO
     params.MaxIt = 1000;        % Maximum Number of Iterations
     params.nPop = 50;           % Population Size (Swarm Size)
-    params.ShowIterInfo = true; % Flag for Showing Iteration Informatin
+    params.ShowIterInfo = false; % Flag for Showing Iteration Informatin
     
     %% Calling PSO
 

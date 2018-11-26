@@ -23,8 +23,9 @@ xPSO = 0;
 fvalHistoryPSO = 0;
 fn = {"f1", "f2"};
 for fidx = 1:2
-    for cnt = 1:10
+    for cnt = 1:1
         % GA
+        
         tic;
         [xGA, fval, fvalHistoryGA] = GA(fn{fidx});
         t = toc
