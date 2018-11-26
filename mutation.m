@@ -1,7 +1,5 @@
 function genotype = mutation(P,parents,fn,pm)
-    
 
-    rng('shuffle');
     n_parents = size(parents,2);
     parent = randi([1,n_parents],1);
     origin = P(parent).g;

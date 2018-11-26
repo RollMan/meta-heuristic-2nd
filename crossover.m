@@ -2,8 +2,7 @@ function genotype = crossover(P,parents,fn)
 %PはすべてのAgentの集合
 %parentsは有用なAgentの格納位置のリスト
 %
-    
-    rng('shuffle');
+
     if fn =="f1"
         n_bit = 10;
         n_x =3;
