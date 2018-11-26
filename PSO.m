@@ -185,7 +185,7 @@ function out = psoProcessing(problem, params)
             disp(['Iteration ' num2str(it) ': Best Cost = ' num2str(BestCosts(it))]);
         end
 
-        % Damping Inertia Coefficient
+        % Increasing Inertia Coefficient
         w = w * wdamp;
         if w > 0.9
             w = 0.9;
