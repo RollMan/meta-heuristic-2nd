@@ -8,6 +8,12 @@ function [xGA, fval, fvalHistory] = PSO(fn)
         problem.VarMin =  -5.11;  % Lower Bound of Decision Variables
         problem.VarMax =   5.12;  % Upper Bound of Decision Variables
 
+        %% Parameters of PSO
+        params.w = 1;               % Intertia Coefficient
+        params.wdamp = 0.99;        % Damping Ratio of Inertia Coefficient
+        params.c1 = 2;              % Personal Acceleration Coefficient
+        params.c2 = 2;              % Social Acceleration Coefficient
+
     elseif fn == "f2"
         %% Problem Definiton
         evaluationFunction = str2func(fn);
@@ -17,18 +23,25 @@ function [xGA, fval, fvalHistory] = PSO(fn)
         problem.VarMin = -2.047;   % Lower Bound of Decision Variables
         problem.VarMax =  2.048;   % Upper Bound of Decision Variables
 
+        %% Parameters of PSO
+        % Constriction Coefficients
+        kappa = 1;
+        phi1 = 2.05;
+        phi2 = 2.05;
+        phi = phi1 + phi2;
+        chi = 2*kappa/abs(2-phi-sqrt(phi^2-4*phi));
+
+        params.w = chi;             % Intertia Coefficient
+        params.wdamp = 1;           % Damping Ratio of Inertia Coefficient
+        params.c1 = chi*phi1;       % Personal Acceleration Coefficient
+        params.c2 = chi*phi2;       % Social Acceleration Coefficient
     end
 
-    %% Parameters of PSO
-
-    params.MaxIt = 2000;        % Maximum Number of Iterations
+    %% Common Parameters of PSO
+    params.MaxIt = 1000;        % Maximum Number of Iterations
     params.nPop = 50;           % Population Size (Swarm Size)
-    params.w = 0.4;             % Intertia Coefficient
-    params.wdamp = 1.00001;     % Increasing Ratio of Inertia Coefficient
-    params.c1 = 2;              % Personal Acceleration Coefficient
-    params.c2 = 2;              % Social Acceleration Coefficient
     params.ShowIterInfo = true; % Flag for Showing Iteration Informatin
-
+    
     %% Calling PSO
 
     out = psoProcessing(problem, params);
@@ -187,9 +200,6 @@ function out = psoProcessing(problem, params)
 
         % Damping Inertia Coefficient
         w = w * wdamp;
-        if w > 0.9
-            w = 0.9;
-        end
 
     end
     
