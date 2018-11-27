@@ -38,14 +38,14 @@ function [xGA, fval, fvalHistory] = PSO(fn)
 
     %% Results
     
-    
+    %{
     figure;
     % plot(BestCosts, 'LineWidth', 2);
     semilogy(BestCosts, 'LineWidth', 2);
     xlabel('Iteration');
     ylabel('Best Cost');
     grid on;
-    
+    %}
     
     xGA  = BestSol.Position;
     fval = BestSol.Cost;
