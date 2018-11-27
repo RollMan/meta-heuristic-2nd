@@ -38,14 +38,14 @@ function [xGA, fval, fvalHistory] = PSO(fn)
 
     %% Results
     
-    %{
+    
     figure;
     % plot(BestCosts, 'LineWidth', 2);
     semilogy(BestCosts, 'LineWidth', 2);
     xlabel('Iteration');
     ylabel('Best Cost');
     grid on;
-    %}
+    
     
     xGA  = BestSol.Position;
     fval = BestSol.Cost;
@@ -148,6 +148,9 @@ function out = psoProcessing(problem, params)
             
             % Update Position
             particle(i).Position = particle(i).Position + particle(i).Velocity;
+            %disp(particle(i).Position)
+            particle(i).Position = round(particle(i).Position, 2);
+            %disp(particle(i).Position)
             
             % Apply Lower and Upper Bound Limits
             particle(i).Position = max(particle(i).Position, VarMin);
