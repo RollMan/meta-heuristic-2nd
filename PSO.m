@@ -21,7 +21,7 @@ function [xGA, fval, fvalHistory] = PSO(fn)
 
     %% Parameters of PSO
 
-    params.MaxIt = 2000;        % Maximum Number of Iterations
+    params.MaxIt = 200;        % Maximum Number of Iterations
     params.nPop = 50;           % Population Size (Swarm Size)
     params.w = 0.4;             % Intertia Coefficient
     params.wdamp = 1.00001;     % Increasing Ratio of Inertia Coefficient
