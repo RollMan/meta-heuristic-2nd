@@ -47,7 +47,7 @@ DEParams.infoPeriod     = 10; % in seconds
 emailParams = [];
 
 % Set random state in order to always use the same population members here
-setrandomseed(1);
+%setrandomseed(1);
 
 % Start differential evolution
 [bestmem, bestval, bestFctParams, nrOfIterations, resultFileName,bestvalhist] = differentevolution(...
