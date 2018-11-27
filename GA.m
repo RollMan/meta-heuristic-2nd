@@ -3,13 +3,13 @@ function [xGA, fval, fvalHistory] = GA(fn)
     ITERATION = 10000;
     agent_num = 100;
     P = [];
-    pm = 3;
+    pm = 0.3;
     if fn == "f1"
         %number_of_vars = 3;
         %xGA = [0,0,0];
         n = 10;
-        for i = 1:agent_num %3x10x100ÔøΩÔøΩPÔøΩÔøΩÔøΩÏê¨ÔøΩÔøΩÔøΩÔøΩ
-            P(i).g = de2bi(randi([0,1023],1,3),n);%genotypeÔøΩÕÇQÔøΩiÔøΩÔøΩ
+        for i = 1:agent_num %3x10x100?øΩ?øΩP?øΩ?øΩ?øΩ?ê¨?øΩ?øΩ?øΩ?øΩ
+            P(i).g = de2bi(randi([0,1023],1,3),n);%genotype?øΩÕÇQ?øΩi?øΩ?øΩ
             P(i).f = 0;
         end
         
@@ -18,8 +18,8 @@ function [xGA, fval, fvalHistory] = GA(fn)
         %number_of_vars = 2;
         %xGA = [0,0];
         n = 12;
-        for i = 1:agent_num %3x12x100ÔøΩÔøΩPÔøΩÔøΩÔøΩÏê¨ÔøΩÔøΩÔøΩÔøΩ
-            P(i).g = de2bi(randi([0,4095],1,2),n);%genotypeÔøΩÕÇQÔøΩiÔøΩÔøΩ
+        for i = 1:agent_num %3x12x100?øΩ?øΩP?øΩ?øΩ?øΩ?ê¨?øΩ?øΩ?øΩ?øΩ
+            P(i).g = de2bi(randi([0,4095],1,2),n);%genotype?øΩÕÇQ?øΩi?øΩ?øΩ
             P(i).f = 0;
         end
         evaluationFunction = str2func(fn);
@@ -31,7 +31,7 @@ function [xGA, fval, fvalHistory] = GA(fn)
     for i = 1:ITERATION
         %tic;
         for j = 1:agent_num
-            tic;
+            %tic;
             if fn == "f1"
                 Phenotype = (bi2de(P(j).g)-511)/100;
                 P(j).f = evaluationFunction(Phenotype(1),Phenotype(2),Phenotype(3)) ;
@@ -78,4 +78,5 @@ function [xGA, fval, fvalHistory] = GA(fn)
        %toc 
     end
     xGA = P( [P.f] == fval ).g;
+    
 end

@@ -12,10 +12,15 @@ function genotype = mutation(P,parents,fn,pm)
         n_x = 2;
     end
     
-    for i = 1:pm
-        point = randi([1,n_bit],1,n_x);
-        for j = 1:n_x
-            genotype(j,point(j)) = imcomplement(origin(j,point(j)));
+    for i = 1:n_x
+        
+        for j = 1:n_bit
+            point = rand();
+            if point <= pm
+                genotype(i,j) = imcomplement(origin(i,j));
+            else
+                genotype(i,j) = origin(i,j);
+            end
         end
     end
 end
