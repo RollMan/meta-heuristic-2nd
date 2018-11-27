@@ -11,8 +11,8 @@ objFctHandle = @f_2;
 % 4. column: initial values (optional)
 
 paramDefCell = {
-	'parameter1', [-2.047 2.048], 0.001
-	'parameter2', [-2.047 2.048], 0.001
+	'parameter1', [-2.047 2.048], 1e-12
+	'parameter2', [-2.047 2.048], 1e-12
 };
 
 % Set initial parameter values in struct objFctParams 
@@ -35,7 +35,7 @@ DEParams.NP = 20;
 DEParams.feedSlaveProc = 0;
 
 % Set times
-DEParams.maxiter  =100;
+DEParams.maxiter  =2000;
 DEParams.maxtime  = 500; % in seconds
 DEParams.maxclock = [];
 

@@ -11,9 +11,9 @@ objFctHandle = @f_1;
 % 4. column: initial values (optional)
 
 paramDefCell = {
-	'parameter1', [-5.11 5.12], 0.01
-	'parameter2', [-5.11 5.12], 0.01
-    'parameter3', [-5.11 5.12], 0.01
+	'parameter1', [-5.11 5.12], 1e-12
+	'parameter2', [-5.11 5.12], 1e-12
+    'parameter3', [-5.11 5.12], 1e-12
 };
 
 fvalHistory = [];
@@ -40,7 +40,7 @@ DEParams.NP = 30;
 DEParams.feedSlaveProc = 0;
 
 % Set times
-DEParams.maxiter  = 100;
+DEParams.maxiter  = 2000;
 DEParams.maxtime  = 500; % in seconds
 DEParams.maxclock = [];
 

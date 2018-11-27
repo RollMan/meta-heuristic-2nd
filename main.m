@@ -27,6 +27,7 @@ for fidx = 1:2
     for cnt = 1:CNT
         
         % GA
+        
         tic;
         [xGA, fval, fvalHistoryGA_] = GA(fn{fidx});
         t = toc
@@ -59,6 +60,7 @@ for fidx = 1:2
         result{fidx, 2, 2, 3} = min(result{fidx, 2, 2, 3}, fval);
         
         % PSO
+        
         tic;
         [xPSO, fval, fvalHistoryPSO_] = PSO(fn{fidx});
         t = toc
@@ -73,6 +75,7 @@ for fidx = 1:2
         result{fidx, 3, 2, 1} = result{fidx, 3, 2, 1} + fval;
         result{fidx, 3, 2, 2} = max(result{fidx, 3, 2, 2}, fval);
         result{fidx, 3, 2, 3} = min(result{fidx, 3, 2, 3}, fval);
+        
     end
     
     for i = 1:3
