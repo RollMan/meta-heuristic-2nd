@@ -8,8 +8,8 @@ function [xGA, fval, fvalHistory] = GA(fn)
         %number_of_vars = 3;
         %xGA = [0,0,0];
         n = 10;
-        for i = 1:agent_num %3x10x100‚ÌP‚ğì¬‚·‚é
-            P(i).g = de2bi(randi([0,1023],1,3),n);%genotype‚Í‚Qi”
+        for i = 1:agent_num %3x10x100ï¿½ï¿½Pï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½ï¿½
+            P(i).g = de2bi(randi([0,1023],1,3),n);%genotypeï¿½Í‚Qï¿½iï¿½ï¿½
             P(i).f = 0;
         end
         
@@ -18,8 +18,8 @@ function [xGA, fval, fvalHistory] = GA(fn)
         %number_of_vars = 2;
         %xGA = [0,0];
         n = 12;
-        for i = 1:agent_num %3x12x100‚ÌP‚ğì¬‚·‚é
-            P(i).g = de2bi(randi([0,4095],1,2),n);%genotype‚Í‚Qi”
+        for i = 1:agent_num %3x12x100ï¿½ï¿½Pï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½ï¿½
+            P(i).g = de2bi(randi([0,4095],1,2),n);%genotypeï¿½Í‚Qï¿½iï¿½ï¿½
             P(i).f = 0;
         end
         evaluationFunction = str2func(fn);

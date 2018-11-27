@@ -324,7 +324,7 @@ if (nargin == 0) || ((nargin == 1) && isstruct(varargin{1}))
   DEParams.feedSlaveProc  = 1;
   DEParams.infoIterations = 1;
   DEParams.infoPeriod     = 60;  % in seconds
-  DEParams.maxiter        = 100;
+  DEParams.maxiter        = 200;
   DEParams.maxtime        = 60;  % in seconds
   
   % set random state to always use the same population members

@@ -22,7 +22,7 @@ fvalHistoryDE = {0, 0};
 xPSO = 0;
 fvalHistoryPSO = {0, 0};
 fn = {"f1", "f2"};
-CNT = 1;
+CNT = 10;
 for fidx = 1:2
     for cnt = 1:CNT
         
