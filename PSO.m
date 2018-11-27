@@ -73,7 +73,7 @@ function out = psoProcessing(problem, params)
     nPop = params.nPop;     % Population Size (Swarm Size)
 
     w = params.w;           % Intertia Coefficient
-    wdamp = params.wdamp;   % Damping Ratio of Inertia Coefficient
+    wdamp = params.wdamp;   % Increasing Ratio of Inertia Coefficient
     c1 = params.c1;         % Personal Acceleration Coefficient
     c2 = params.c2;         % Social Acceleration Coefficient
 
@@ -148,16 +148,6 @@ function out = psoProcessing(problem, params)
             
             % Update Position
             particle(i).Position = particle(i).Position + particle(i).Velocity;
-            
-            if nVar == 3
-                %disp(particle(i).Position)
-                particle(i).Position = round(particle(i).Position, 2);
-                %disp(particle(i).Position)
-            elseif nVar == 2
-                %disp(particle(i).Position)
-                particle(i).Position = round(particle(i).Position, 3);
-                %disp(particle(i).Position)
-            end
             
             % Apply Lower and Upper Bound Limits
             particle(i).Position = max(particle(i).Position, VarMin);
