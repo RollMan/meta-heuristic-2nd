@@ -148,9 +148,16 @@ function out = psoProcessing(problem, params)
             
             % Update Position
             particle(i).Position = particle(i).Position + particle(i).Velocity;
-            %disp(particle(i).Position)
-            particle(i).Position = round(particle(i).Position, 2);
-            %disp(particle(i).Position)
+            
+            if nVar == 3
+                %disp(particle(i).Position)
+                particle(i).Position = round(particle(i).Position, 2);
+                %disp(particle(i).Position)
+            elseif nVar == 2
+                %disp(particle(i).Position)
+                particle(i).Position = round(particle(i).Position, 3);
+                %disp(particle(i).Position)
+            end
             
             % Apply Lower and Upper Bound Limits
             particle(i).Position = max(particle(i).Position, VarMin);
